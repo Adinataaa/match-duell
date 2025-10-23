@@ -6,73 +6,82 @@
     <title>Math Duel - Invite Teman</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/invite.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div class="pixel-corner tl"></div>
+    <div class="pixel-corner tr"></div>
+    <div class="pixel-corner bl"></div>
+    <div class="pixel-corner br"></div>
+    <div class="scanlines"></div>
+
     <div class="container">
         <header class="invite-header">
-            <h1>📨 Invite Teman</h1>
-            <button class="btn btn-secondary btn-sm" onclick="goToHome()">← Kembali</button>
+            <h1>🎮 INVITE TEMAN</h1>
+            <button class="btn btn-secondary btn-sm" onclick="goToHome()">← HOME</button>
         </header>
 
         <div class="invite-content">
             <div class="room-card">
-                <h2>Room Duel Matematika</h2>
+                <div class="pixel-title">
+                    <h2>ROOM DUEL MATEMATIKA</h2>
+                </div>
                 
                 <div class="room-info">
                     <div class="room-code">
-                        <label>Kode Room:</label>
-                        <div class="code-display" id="roomCode">MATH-1234</div>
+                        <label>KODE ROOM:</label>
+                        <div class="code-display" id="roomCode">LOADING...</div>
                         <button class="btn btn-copy" onclick="copyRoomCode()">
-                            📋 Salin Kode
+                            📋 SALIN KODE
                         </button>
                     </div>
 
                     <div class="room-status">
                         <div class="status-item">
-                            <span>Status:</span>
-                            <span class="status-active">● Aktif</span>
+                            <span>STATUS:</span>
+                            <span class="status-active">● AKTIF</span>
                         </div>
                         <div class="status-item">
-                            <span>Pemain:</span>
-                            <span id="playerCount">1/2</span>
+                            <span>PEMAIN:</span>
+                            <span id="playerCount">0/2</span>
                         </div>
                     </div>
                 </div>
 
                 <div class="share-options">
-                    <h3>Bagikan Room:</h3>
+                    <h3>BAGIKAN ROOM:</h3>
                     <div class="share-buttons">
                         <button class="btn btn-share whatsapp" onclick="shareWhatsApp()">
-                            📱 WhatsApp
+                            📱 WHATSAPP
                         </button>
                         <button class="btn btn-share link" onclick="copyInviteLink()">
-                            🔗 Salin Link
+                            🔗 SALIN LINK
                         </button>
                     </div>
                 </div>
 
                 <div class="player-assignment">
-                    <h3>Penugasan Pemain:</h3>
+                    <h3>PILIH PERAN:</h3>
                     <div class="player-options">
                         <button class="btn btn-player" onclick="joinAsPlayer1()">
-                            🎮 Join sebagai Player 1
+                            👤 PLAYER 1
                         </button>
                         <button class="btn btn-player" onclick="joinAsPlayer2()">
-                            🎮 Join sebagai Player 2
+                            👤 PLAYER 2
                         </button>
                     </div>
                 </div>
 
                 <div class="quick-start">
-                    <h3>Mulai Cepat:</h3>
+                    <h3>MULAI CEPAT:</h3>
                     <button class="btn btn-primary btn-large" onclick="startDuel()">
-                        🚀 Mulai Duel Sekarang
+                        🚀 MULAI DUEL!
                     </button>
                 </div>
             </div>
 
             <div class="instructions">
-                <h3>Cara Bermain:</h3>
+                <h3>CARA BERMAIN:</h3>
                 <ol>
                     <li>Bagikan kode room ke temanmu</li>
                     <li>Teman join dengan kode room</li>

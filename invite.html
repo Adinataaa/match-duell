@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Duel - Invite Teman</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/invite.css">
+</head>
+<body>
+    <div class="container">
+        <header class="invite-header">
+            <h1>📨 Invite Teman</h1>
+            <button class="btn btn-secondary btn-sm" onclick="goToHome()">← Kembali</button>
+        </header>
+
+        <div class="invite-content">
+            <div class="room-card">
+                <h2>Room Duel Matematika</h2>
+                
+                <div class="room-info">
+                    <div class="room-code">
+                        <label>Kode Room:</label>
+                        <div class="code-display" id="roomCode">MATH-1234</div>
+                        <button class="btn btn-copy" onclick="copyRoomCode()">
+                            📋 Salin Kode
+                        </button>
+                    </div>
+
+                    <div class="room-status">
+                        <div class="status-item">
+                            <span>Status:</span>
+                            <span class="status-active">● Aktif</span>
+                        </div>
+                        <div class="status-item">
+                            <span>Pemain:</span>
+                            <span id="playerCount">1/2</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="share-options">
+                    <h3>Bagikan Room:</h3>
+                    <div class="share-buttons">
+                        <button class="btn btn-share whatsapp" onclick="shareWhatsApp()">
+                            📱 WhatsApp
+                        </button>
+                        <button class="btn btn-share link" onclick="copyInviteLink()">
+                            🔗 Salin Link
+                        </button>
+                    </div>
+                </div>
+
+                <div class="player-assignment">
+                    <h3>Penugasan Pemain:</h3>
+                    <div class="player-options">
+                        <button class="btn btn-player" onclick="joinAsPlayer1()">
+                            🎮 Join sebagai Player 1
+                        </button>
+                        <button class="btn btn-player" onclick="joinAsPlayer2()">
+                            🎮 Join sebagai Player 2
+                        </button>
+                    </div>
+                </div>
+
+                <div class="quick-start">
+                    <h3>Mulai Cepat:</h3>
+                    <button class="btn btn-primary btn-large" onclick="startDuel()">
+                        🚀 Mulai Duel Sekarang
+                    </button>
+                </div>
+            </div>
+
+            <div class="instructions">
+                <h3>Cara Bermain:</h3>
+                <ol>
+                    <li>Bagikan kode room ke temanmu</li>
+                    <li>Teman join dengan kode room</li>
+                    <li>Tentukan siapa Player 1 dan Player 2</li>
+                    <li>Mulai duel dan jawab soal dengan cepat!</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/invite.js"></script>
+</body>
+</html>

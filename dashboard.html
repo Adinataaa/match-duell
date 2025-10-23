@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Duel - Dashboard Guru</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+    <div class="container">
+        <header class="dashboard-header">
+            <h1>📊 Dashboard Guru</h1>
+            <div class="header-actions">
+                <span id="teacherName">Guru Matematika</span>
+                <button class="btn btn-secondary btn-sm" onclick="logout()">Logout</button>
+            </div>
+        </header>
+
+        <div class="dashboard-content">
+            <div class="control-panel">
+                <div class="panel-section">
+                    <h3>🎯 Pengaturan Soal</h3>
+                    
+                    <div class="form-group">
+                        <label for="questionType">Jenis Soal</label>
+                        <select id="questionType" class="form-control">
+                            <option value="addition">Penjumlahan</option>
+                            <option value="subtraction">Pengurangan</option>
+                            <option value="multiplication">Perkalian</option>
+                            <option value="division">Pembagian</option>
+                            <option value="mixed">Campuran</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="difficulty">Tingkat Kesulitan</label>
+                        <select id="difficulty" class="form-control">
+                            <option value="easy">Mudah (angka 1-10)</option>
+                            <option value="medium">Sedang (angka 1-50)</option>
+                            <option value="hard">Sulit (angka 1-100)</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="customQuestion">Soal Kustom</label>
+                        <input type="text" id="customQuestion" class="form-control" placeholder="Contoh: 15 + 25">
+                    </div>
+                    
+                    <button class="btn btn-primary" onclick="generateQuestion()">
+                        Buat Soal Baru
+                    </button>
+                </div>
+
+                <div class="panel-section">
+                    <h3>⚙️ Kontrol Permainan</h3>
+                    
+                    <div class="form-group">
+                        <label for="playerTurn">Giliran Pemain</label>
+                        <select id="playerTurn" class="form-control">
+                            <option value="player1">Player 1</option>
+                            <option value="player2">Player 2</option>
+                        </select>
+                    </div>
+                    
+                    <div class="score-controls">
+                        <label>Skor Saat Ini</label>
+                        <div class="score-inputs">
+                            <div class="score-input">
+                                <span>Player 1</span>
+                                <input type="number" id="scorePlayer1" class="form-control" value="0" min="0">
+                            </div>
+                            <div class="score-input">
+                                <span>Player 2</span>
+                                <input type="number" id="scorePlayer2" class="form-control" value="0" min="0">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button class="btn btn-warning" onclick="resetScores()">
+                        Reset Semua Skor
+                    </button>
+                    
+                    <button class="btn btn-success" onclick="goToInvite()">
+                        📨 Buat Room Baru
+                    </button>
+                </div>
+            </div>
+
+            <div class="current-question">
+                <h3>Soal Saat Ini:</h3>
+                <div class="question-display" id="currentQuestion">
+                    5 + 3 = ?
+                </div>
+            </div>
+
+            <div class="game-status">
+                <h3>Status Permainan</h3>
+                <div class="status-cards">
+                    <div class="status-card">
+                        <h4>Player 1</h4>
+                        <div class="status-score" id="statusPlayer1">0 poin</div>
+                        <div class="status-turn" id="turnPlayer1">-</div>
+                    </div>
+                    <div class="status-card">
+                        <h4>Player 2</h4>
+                        <div class="status-score" id="statusPlayer2">0 poin</div>
+                        <div class="status-turn" id="turnPlayer2">-</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/dashboard.js"></script>
+</body>
+</html>

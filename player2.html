@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Duel - Player 2</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/game.css">
+</head>
+<body>
+    <div class="container game-container">
+        <header class="game-header">
+            <div class="score-display">
+                <div class="score-player">
+                    <span class="player-name">Player 1</span>
+                    <span class="player-score" id="scorePlayer1">0</span>
+                </div>
+                <div class="vs-badge">VS</div>
+                <div class="score-player active">
+                    <span class="player-name">Player 2</span>
+                    <span class="player-score" id="scorePlayer2">0</span>
+                </div>
+            </div>
+            <button class="btn btn-exit" onclick="exitGame()">🏠 Keluar</button>
+        </header>
+
+        <div class="game-content">
+            <div class="question-section">
+                <h3>SOAL SEKARANG:</h3>
+                <div class="question" id="currentQuestion">5 + 3 = ?</div>
+                <div class="turn-indicator" id="turnIndicator">
+                    ⏳ Menunggu giliran Player 1...
+                </div>
+            </div>
+
+            <div class="calculator-section">
+                <h3>KALKULATOR PLAYER 2</h3>
+                <input type="text" class="answer-display" id="answerDisplay" readonly>
+                
+                <div class="calculator">
+                    <button class="calc-btn clear" onclick="clearDisplay()">C</button>
+                    <button class="calc-btn operator" onclick="appendToDisplay('/')">/</button>
+                    <button class="calc-btn operator" onclick="appendToDisplay('*')">×</button>
+                    
+                    <button class="calc-btn" onclick="appendToDisplay('7')">7</button>
+                    <button class="calc-btn" onclick="appendToDisplay('8')">8</button>
+                    <button class="calc-btn" onclick="appendToDisplay('9')">9</button>
+                    <button class="calc-btn operator" onclick="appendToDisplay('-')">-</button>
+                    
+                    <button class="calc-btn" onclick="appendToDisplay('4')">4</button>
+                    <button class="calc-btn" onclick="appendToDisplay('5')">5</button>
+                    <button class="calc-btn" onclick="appendToDisplay('6')">6</button>
+                    <button class="calc-btn operator" onclick="appendToDisplay('+')">+</button>
+                    
+                    <button class="calc-btn" onclick="appendToDisplay('1')">1</button>
+                    <button class="calc-btn" onclick="appendToDisplay('2')">2</button>
+                    <button class="calc-btn" onclick="appendToDisplay('3')">3</button>
+                    <button class="calc-btn equals" onclick="calculate()">=</button>
+                    
+                    <button class="calc-btn zero" onclick="appendToDisplay('0')">0</button>
+                    <button class="calc-btn" onclick="appendToDisplay('.')">.</button>
+                </div>
+
+                <button class="submit-btn" id="submitBtn" onclick="submitAnswer()" disabled>
+                    ⏳ Tunggu Giliran
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Winner Modal -->
+    <div class="modal" id="winnerModal">
+        <div class="modal-content">
+            <h2>🎉 SELAMAT!</h2>
+            <div class="winner-name" id="winnerName">Player 2</div>
+            <p>telah memenangkan duel matematika!</p>
+            <div class="modal-actions">
+                <button class="btn btn-primary" onclick="restartGame()">Main Lagi</button>
+                <button class="btn btn-secondary" onclick="goToHome()">Kembali ke Home</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/game.js"></script>
+    <script>
+        // Inisialisasi khusus player 2
+        const PLAYER_ID = 'player2';
+        initializeGame(PLAYER_ID);
+    </script>
+</body>
+</html>
